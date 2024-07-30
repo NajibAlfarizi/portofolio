@@ -23,83 +23,53 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <nav
-    :class="{ blurred: isBlurred }"
-    class="navbar bg-gray-800 p-4 shadow-lg max-w-3xl w-full mx-auto rounded-lg -mt-16"
-  >
-    <div class="container mx-auto flex items-center">
-      <div class="text-white text-2xl font-bold">MyPorto</div>
-      <div class="hidden md:flex space-x-4 ml-auto">
-        <RouterLink active-class="active" class="text-gray-300 hover:text-white" to="/">Home</RouterLink>
-        <a href="#" class="text-gray-300 hover:text-white">About</a>
-        <a href="#" class="text-gray-300 hover:text-white">Project</a>
-        <a href="#" class="text-gray-300 hover:text-white">Experience</a>
+  <nav :class="{ blurred: isBlurred }" class="navbar sticky top-0 bg-transparent z-50">
+    <div class="max-w-4xl xl:max-w-5xl mx-auto px-5 py-2.5 lg:py-4 flex items-center justify-between">
+      <button>
+        <div class="flex items-center space-x-2">
+          <h2 class="text-black dark:text-white font-bold text-2xl">MyPorto</h2>
+        </div>
+      </button>
+      <div class="hidden lg:flex space-x-10 text-base font-bold text-black/60 dark:text-white">
+        <RouterLink to="/" active-class="active" class="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">Home</RouterLink>
+        <a href="#" class="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">About Me</a>
+        <a href="#" class="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">Project</a>
+        <a href="#" class="hover:underline hover:underline-offset-4 hover:w-fit transition-all duration-100 ease-linear">Services</a>
       </div>
-      <div class="md:hidden">
-        <button
-          @click="toggleMenu"
-          class="text-gray-300 hover:text-white focus:outline-none"
-        >
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
+      <div class="lg:hidden">
+        <button @click="toggleMenu" class="text-black dark:text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
           </svg>
         </button>
       </div>
     </div>
-    <div v-if="isMenuOpen" class="md:hidden">
-      <a href="#" class="block text-gray-300 hover:text-white py-2 px-4"
-        >Home</a
-      >
-      <a href="#" class="block text-gray-300 hover:text-white py-2 px-4"
-        >About</a
-      >
-      <a href="#" class="block text-gray-300 hover:text-white py-2 px-4"
-        >Project</a
-      >
-      <a href="#" class="block text-gray-300 hover:text-white py-2 px-4"
-        >Experience</a
-      >
+    <div v-if="isMenuOpen" class="lg:hidden">
+      <RouterLink to="/" active-class="active" class="block text-gray-300 hover:text-white py-2 px-4">Home</RouterLink>
+      <a href="#" class="block text-gray-300 hover:text-white py-2 px-4">Our services</a>
+      <a href="#" class="block text-gray-300 hover:text-white py-2 px-4">About</a>
+      <a href="#" class="block text-gray-300 hover:text-white py-2 px-4">Contact</a>
     </div>
   </nav>
 </template>
 
 <style scoped>
 .navbar {
-  position: sticky;
-  top: 20px; /* memberikan sedikit jarak dari atas */
-  z-index: 10;
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-  border-radius: 15px; /* sudut melengkung */
-  box-shadow: 0 10px 14px rgba(0, 0, 0, 0.1); /* bayangan untuk efek 3D */
 }
 
 .blurred {
   backdrop-filter: blur(10px);
-  background-color: rgba(31, 41, 55, 0.75); /* Menambahkan transparansi */
+  background-color: rgba(255, 255, 255, 0.75); /* Transparansi untuk tema terang */
 }
 
-.container {
-  display: flex;
-  justify-content: center; /* Menempatkan konten di tengah */
-}
-
-nav a {
-  transition: color 0.3s ease;
+.dark .blurred {
+  background-color: rgba(31, 41, 55, 0.75); /* Transparansi untuk tema gelap */
 }
 
 .active {
-  font-weight: bold;
+  color: black;
+  font-weight: bolder;
   text-decoration: underline;
 }
 </style>
