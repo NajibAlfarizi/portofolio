@@ -44,7 +44,7 @@ onUnmounted(() => {
         </button>
       </div>
     </div>
-    <div v-if="isMenuOpen" class="lg:hidden">
+    <div v-if="isMenuOpen" class="lg:hidden hover:ease-in-out hover:duration-300">
       <RouterLink to="/" active-class="active" class="block text-gray-300 hover:text-white py-2 px-4">Home</RouterLink>
       <a href="#" class="block text-gray-300 hover:text-white py-2 px-4">Our services</a>
       <a href="#" class="block text-gray-300 hover:text-white py-2 px-4">About</a>

@@ -17,19 +17,19 @@
           </p>
           <div class="flex gap-2">
             <a
-              href="#"
-              class="hover:bg-indigo-600 text-white font-bold py-3 px-6 rounded-md"
+              href="www.linkedin.com/in/najib-alfarizi"
+              class="hover:bg-indigo-600 hover:ease-in-out hover:duration-300 text-white font-bold py-3 px-6 rounded-md"
             >
               Linkedin
             </a>
             <a
-              href="#"
-              class="hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-md"
+              href="https://github.com/NajibAlfarizi"
+              class="hover:bg-gray-600 hover:ease-in-out hover:duration-300 text-white font-bold py-3 px-6 rounded-md"
               >Github
             </a>
             <a
-              href="#"
-              class="hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-md"
+              href="https://www.instagram.com/_najib.alfarizi"
+              class="hover:bg-pink-600 hover:ease-in-out hover:duration-300 text-white font-bold py-3 px-6 rounded-md"
               >Instagram
             </a>
           </div>
